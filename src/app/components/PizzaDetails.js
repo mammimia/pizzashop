@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { pizzaSizes } from './selection/PizzaSize';
 import Image from 'next/image';
-import SizeSelections from './selection/SizeSelections';
+import { useEffect, useState } from 'react';
 import CrustSelections from './selection/CrustSelections';
-import Topping from './selection/Topping';
-import Toppings from './selection/Toppings';
 import { pizzaCrusts } from './selection/PizzaCurst';
+import { pizzaSizes } from './selection/PizzaSize';
+import SizeSelections from './selection/SizeSelections';
+import Toppings from './selection/Toppings';
 
 const PizzaDetails = ({ pizza }) => {
   const [size, setSize] = useState(pizzaSizes.SMALL);
   const [crust, setCrust] = useState(pizzaCrusts.TRADATIONAL);
-  const [topping, setTopping] = useState([]);
+  const [additionalToppings, setAdditionalToppings] = useState([]);
   const [toppingPrice, setToppingPrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -31,13 +30,16 @@ const PizzaDetails = ({ pizza }) => {
   }, [size, toppingPrice, pizza]);
 
   useEffect(() => {
-    if (topping.length > 0) {
-      const toppingPrice = topping.reduce((acc, curr) => acc + curr.price, 0);
+    if (additionalToppings.length > 0) {
+      const toppingPrice = additionalToppings.reduce(
+        (acc, curr) => acc + curr?.price,
+        0
+      );
       setToppingPrice(toppingPrice);
     } else {
       setToppingPrice(0);
     }
-  }, [topping]);
+  }, [additionalToppings]);
 
   const detailText = [
     size?.diameter,
@@ -70,7 +72,10 @@ const PizzaDetails = ({ pizza }) => {
             </div>
             <SizeSelections image={pizza.image} size={size} setSize={setSize} />
             <CrustSelections crust={crust} setCrust={setCrust} />
-            <Toppings toppings={pizza.toppings} />
+            <Toppings
+              toppings={pizza.toppings}
+              setAdditionalToppings={setAdditionalToppings}
+            />
           </div>
         </div>
         <div className="h-full flex items-center px-2 lg:items-end">
