@@ -39,6 +39,7 @@ const PizzaDetails = ({ pizza }) => {
   }, [topping]);
 
   const detailText = [size?.diameter, 'crust ' + crust].join(', ');
+
   return (
     <div className="flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8">
       <div className="lg:flex-1 flex justify-center items-center">
@@ -63,7 +64,7 @@ const PizzaDetails = ({ pizza }) => {
                 <span>{detailText}</span>
               </div>
             </div>
-            <SizeSelections />
+            <SizeSelections image={pizza.image} size={size} setSize={setSize} />
             <CrustSelections />
             <Toppings toppings={pizza.toppings} />
           </div>
