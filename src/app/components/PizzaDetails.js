@@ -5,10 +5,11 @@ import SizeSelections from './selection/SizeSelections';
 import CrustSelections from './selection/CrustSelections';
 import Topping from './selection/Topping';
 import Toppings from './selection/Toppings';
+import { pizzaCrusts } from './selection/PizzaCurst';
 
 const PizzaDetails = ({ pizza }) => {
   const [size, setSize] = useState(pizzaSizes.SMALL);
-  const [crust, setCrust] = useState('tradational');
+  const [crust, setCrust] = useState(pizzaCrusts.TRADATIONAL);
   const [topping, setTopping] = useState([]);
   const [toppingPrice, setToppingPrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -38,7 +39,10 @@ const PizzaDetails = ({ pizza }) => {
     }
   }, [topping]);
 
-  const detailText = [size?.diameter, 'crust ' + crust].join(', ');
+  const detailText = [
+    size?.diameter,
+    crust.label.toLowerCase() + ' crust'
+  ].join(', ');
 
   return (
     <div className="flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8">
@@ -60,12 +64,12 @@ const PizzaDetails = ({ pizza }) => {
           <div className="flex-1 overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white pr-2">
             <div className="font-semibold">
               <h2 className="capitalize text-3xl mb-1">{pizza.name}</h2>
-              <div className="bg-yellow-200 mb-6 text-lg font-medium">
+              <div className="mb-6 text-lg font-medium">
                 <span>{detailText}</span>
               </div>
             </div>
             <SizeSelections image={pizza.image} size={size} setSize={setSize} />
-            <CrustSelections />
+            <CrustSelections crust={crust} setCrust={setCrust} />
             <Toppings toppings={pizza.toppings} />
           </div>
         </div>

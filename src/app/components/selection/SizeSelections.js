@@ -26,11 +26,11 @@ const SizeSelection = ({ image, value, size, setSize, imageSize }) => {
   return (
     <label className="flex flex-col items-center gap-x-2 cursor-pointer">
       <Image
-        className={
+        className={`${
           isSelected
             ? 'border-2 border-orange rounded-full'
             : 'border-transparent filter saturate-[.1]'
-        }
+        } mb-1`}
         src={image}
         alt=""
         width={imageSize}
