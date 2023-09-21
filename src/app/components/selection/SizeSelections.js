@@ -6,27 +6,16 @@ const SizeSelections = ({ image, size, setSize }) => {
   return (
     <div className="mx-auto max-w-sm lg:max-w-none flex items-center justify-center lg:justify-start">
       <div className="flex gap-x-12 items-baseline mb-10 font-medium">
-        <SizeSelection
-          image={image}
-          setSize={setSize}
-          size={size}
-          value={pizzaSizes.SMALL}
-          imageSize={60}
-        />
-        <SizeSelection
-          image={image}
-          setSize={setSize}
-          size={size}
-          value={pizzaSizes.MEDIUM}
-          imageSize={70}
-        />
-        <SizeSelection
-          image={image}
-          setSize={setSize}
-          size={size}
-          value={pizzaSizes.LARGE}
-          imageSize={80}
-        />
+        {Object.values(pizzaSizes).map((ps) => (
+          <SizeSelection
+            key={ps.label}
+            image={image}
+            value={ps}
+            size={size}
+            setSize={setSize}
+            imageSize={ps.imageSize}
+          />
+        ))}
       </div>
     </div>
   );
