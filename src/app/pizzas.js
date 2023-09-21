@@ -1,3 +1,36 @@
+const toppings = [
+  {
+    id: 1,
+    image: '/cherry.png',
+    name: 'cherry tomatoes',
+    price: 2
+  },
+  {
+    id: 2,
+    image: '/corn.png',
+    name: 'corn',
+    price: 2
+  },
+  {
+    id: 3,
+    image: '/fresh-tomatoes.png',
+    name: 'fresh tomatoes',
+    price: 2
+  },
+  {
+    id: 4,
+    image: '/jalapeno.png',
+    name: 'jalapeno',
+    price: 2
+  },
+  {
+    id: 5,
+    image: '/parmesan.png',
+    name: 'parmesan',
+    price: 2
+  }
+];
+
 export const pizzas = [
   {
     id: 1,
@@ -8,33 +41,7 @@ export const pizzas = [
     priceSm: 9.99,
     priceMd: 10.99,
     priceLg: 11.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 2,
@@ -45,33 +52,7 @@ export const pizzas = [
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 3,
@@ -82,33 +63,7 @@ export const pizzas = [
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 4,
@@ -119,33 +74,7 @@ export const pizzas = [
     priceSm: 11.99,
     priceMd: 12.99,
     priceLg: 13.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 5,
@@ -156,33 +85,7 @@ export const pizzas = [
     priceSm: 9.99,
     priceMd: 10.99,
     priceLg: 11.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 6,
@@ -193,33 +96,7 @@ export const pizzas = [
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 7,
@@ -230,33 +107,7 @@ export const pizzas = [
     priceSm: 12.99,
     priceMd: 13.99,
     priceLg: 14.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 8,
@@ -267,33 +118,7 @@ export const pizzas = [
     priceSm: 11.99,
     priceMd: 12.99,
     priceLg: 13.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 9,
@@ -304,33 +129,7 @@ export const pizzas = [
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
+    toppings
   },
   {
     id: 10,
@@ -341,32 +140,6 @@ export const pizzas = [
     priceSm: 9.99,
     priceMd: 10.99,
     priceLg: 11.99,
-    toppings: [
-      {
-        image: '/cherry.png',
-        name: 'cherry tomatoes',
-        price: 2,
-      },
-      {
-        image: '/corn.png',
-        name: 'corn',
-        price: 2,
-      },
-      {
-        image: '/fresh-tomatoes.png',
-        name: 'fresh tomatoes',
-        price: 2,
-      },
-      {
-        image: '/jalapeno.png',
-        name: 'jalapeno',
-        price: 2,
-      },
-      {
-        image: '/parmesan.png',
-        name: 'parmesan',
-        price: 2,
-      },
-    ],
-  },
+    toppings
+  }
 ];
