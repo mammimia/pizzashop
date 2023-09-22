@@ -25,9 +25,23 @@ const CartProvider = ({ children }) => {
     setCartItems(newCartItems);
   };
 
+  const getTotalPrice = () => {
+    const totalPrice = cartItems.reduce((acc, item) => {
+      return acc + parseFloat(item.totalPrice);
+    }, 0);
+    return parseFloat(totalPrice).toFixed(2);
+  };
+
   return (
     <CartContext.Provider
-      value={{ isOpen, setIsOpen, cartItems, addToCart, removeFromCart }}
+      value={{
+        isOpen,
+        setIsOpen,
+        cartItems,
+        addToCart,
+        removeFromCart,
+        getTotalPrice
+      }}
     >
       {children}
     </CartContext.Provider>
