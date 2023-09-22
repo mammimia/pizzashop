@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CrustSelections from './selection/CrustSelections';
 import { pizzaCrusts } from './selection/PizzaCurst';
 import { pizzaSizes } from './selection/PizzaSize';
 import SizeSelections from './selection/SizeSelections';
 import Toppings from './selection/Toppings';
+import { CartContext } from '../context/CartContext';
 
 const PizzaDetails = ({ pizza }) => {
   const [size, setSize] = useState(pizzaSizes.SMALL);
@@ -12,6 +13,17 @@ const PizzaDetails = ({ pizza }) => {
   const [additionalToppings, setAdditionalToppings] = useState([]);
   const [toppingPrice, setToppingPrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const { addToCart } = useContext(CartContext);
+
+  const handleCartAdd = () => {
+    addToCart({
+      pizza,
+      size,
+      crust,
+      additionalToppings,
+      totalPrice
+    });
+  };
 
   useEffect(() => {
     switch (size) {
@@ -79,7 +91,10 @@ const PizzaDetails = ({ pizza }) => {
           </div>
         </div>
         <div className="h-full flex items-center px-2 lg:items-end">
-          <button className="btn btn-lg gradient w-full flex justify-center gap-x-2">
+          <button
+            className="btn btn-lg gradient w-full flex justify-center gap-x-2"
+            onClick={handleCartAdd}
+          >
             <div>Add to cart for</div>
             <div>$ {totalPrice}</div>
           </button>

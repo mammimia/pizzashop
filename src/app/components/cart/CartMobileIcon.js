@@ -4,7 +4,7 @@ import { BsHandbagFill } from 'react-icons/bs';
 import { CartContext } from '../../context/CartContext';
 
 const CartMobileIcon = () => {
-  const { isOpen, setIsOpen } = useContext(CartContext);
+  const { isOpen, setIsOpen, cartItems } = useContext(CartContext);
   return (
     <div
       className="bg-tertiary w-[72px] h-[72px] rounded-full flex 
@@ -17,7 +17,7 @@ const CartMobileIcon = () => {
         className="absolute text-white bottom-3 right-4 gradient w-5 h-5 flex justify-center
        items-center rounded-full font-robotoCondensed text-[13px]"
       >
-        3
+        {cartItems?.length}
       </span>
     </div>
   );
