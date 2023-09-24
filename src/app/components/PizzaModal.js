@@ -27,7 +27,10 @@ const PizzaModal = ({ pizza, isModalVisible, setIsModalVisible }) => {
           <IoCloseOutline className="text-4xl text-orange" />
         </div>
 
-        <PizzaDetails pizza={pizza} />
+        <PizzaDetails
+          pizza={pizza}
+          closeModal={() => setIsModalVisible(false)}
+        />
       </Modal>
     )
   );

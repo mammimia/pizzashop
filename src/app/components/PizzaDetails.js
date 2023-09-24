@@ -7,7 +7,7 @@ import SizeSelections from './selection/SizeSelections';
 import Toppings from './selection/Toppings';
 import { CartContext } from '../context/CartContext';
 
-const PizzaDetails = ({ pizza }) => {
+const PizzaDetails = ({ pizza, closeModal }) => {
   const [size, setSize] = useState(pizzaSizes.SMALL);
   const [crust, setCrust] = useState(pizzaCrusts.TRADATIONAL);
   const [additionalToppings, setAdditionalToppings] = useState([]);
@@ -23,6 +23,7 @@ const PizzaDetails = ({ pizza }) => {
       additionalToppings,
       totalPrice
     });
+    closeModal();
   };
 
   useEffect(() => {
