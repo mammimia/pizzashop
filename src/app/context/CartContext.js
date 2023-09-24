@@ -5,17 +5,36 @@ import react, { createContext, useState } from 'react';
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
-    const newItem = {
-      ...item,
-      additionalToppings: item.additionalToppings.sort((a, b) =>
-        a.name.localeCompare(b.name)
-      )
-    };
-    setCartItems([...cartItems, newItem]);
+    const existingItemIndex = cartItems.findIndex(
+      (cartItem) =>
+        cartItem.id === item.id &&
+        cartItem.size === item.size &&
+        cartItem.price === item.price &&
+        JSON.stringify(cartItem.additionalToppings) ===
+          JSON.stringify(item.additionalToppings) &&
+        cartItem.crust === item.crust
+    );
+
+    if (existingItemIndex === -1) {
+      const newItem = {
+        ...item,
+        additionalToppings: item.additionalToppings.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        ),
+        quantity: 1
+      };
+
+      setCartItems([...cartItems, newItem]);
+    } else {
+      const newCartItems = [...cartItems];
+      newCartItems[existingItemIndex].quantity += 1;
+      setCartItems(newCartItems);
+    }
+    setIsOpen(true);
   };
 
   const removeFromCart = (item) => {
@@ -27,7 +46,7 @@ const CartProvider = ({ children }) => {
 
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((acc, item) => {
-      return acc + parseFloat(item.totalPrice);
+      return acc + parseFloat(item.totalPrice) * item.quantity;
     }, 0);
     return parseFloat(totalPrice).toFixed(2);
   };

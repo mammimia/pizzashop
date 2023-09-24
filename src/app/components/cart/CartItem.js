@@ -23,7 +23,7 @@ const CartItem = ({ cartItem }) => {
               <BiMinus />
             </div>
             <div className="font-semibold flex flex-1 max-w-[30px] justify-center text-sm">
-              1
+              {cartItem.quantity}
             </div>
             <div className="w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full">
               <BiPlus />
@@ -39,7 +39,7 @@ const CartItem = ({ cartItem }) => {
           </div>
           <div>
             <span className="text-[17px] font-medium font-robotoCondensed">
-              {parseFloat(cartItem.totalPrice * 1).toFixed(2)}
+              {parseFloat(cartItem.totalPrice * cartItem.quantity).toFixed(2)}
             </span>
           </div>
         </div>
