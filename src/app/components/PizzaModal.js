@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
 import { IoCloseOutline } from 'react-icons/io5';
 import PizzaDetails from './PizzaDetails';
+import ModalCloseButton from './modal/ModalCloseButton';
 
 const modalStyles = {
   overlay: {
@@ -20,12 +21,7 @@ const PizzaModal = ({ pizza, isModalVisible, setIsModalVisible }) => {
         onRequestClose={() => setIsModalVisible(false)}
         contentLabel="Pizza Modal"
       >
-        <div
-          className="absolute z-30 right-2 top-2 hover:scale-110 duration-200 cursor-pointer"
-          onClick={() => setIsModalVisible(false)}
-        >
-          <IoCloseOutline className="text-4xl text-orange" />
-        </div>
+        <ModalCloseButton onClick={() => setIsModalVisible(false)} />
 
         <PizzaDetails
           pizza={pizza}
