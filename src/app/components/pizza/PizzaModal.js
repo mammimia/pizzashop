@@ -1,7 +1,7 @@
 import Modal from 'react-modal';
 import { IoCloseOutline } from 'react-icons/io5';
 import PizzaDetails from './PizzaDetails';
-import ModalCloseButton from './modal/ModalCloseButton';
+import ModalCloseButton from '../modal/ModalCloseButton';
 
 const modalStyles = {
   overlay: {

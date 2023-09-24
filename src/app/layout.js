@@ -1,7 +1,8 @@
 import CartDesktop from './components/cart/CartDesktop';
 import CartMobile from './components/cart/CartMobile';
 import CartMobileIcon from './components/cart/CartMobileIcon';
-import Nav from './components/Nav';
+import Footer from './components/layout/Footer';
+import Nav from './components/layout/Nav';
 import CartProvider from './context/CartContext';
 import './globals.css';
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           <CartMobile />
           <CartDesktop />
           {children}
+          <Footer />
         </body>
       </html>
     </CartProvider>

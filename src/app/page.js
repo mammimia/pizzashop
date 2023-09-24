@@ -1,6 +1,6 @@
-import Banner from './components/Banner';
-import Pizza from './components/Pizza';
-import { pizzas } from './pizzas';
+import Banner from './components/layout/Banner';
+import Pizza from './components/pizza/Pizza';
+import { pizzas } from './data/pizzas';
 
 export default function Home() {
   return (

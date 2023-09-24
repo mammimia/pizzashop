@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
-import CrustSelections from './selection/CrustSelections';
-import { pizzaCrusts } from './selection/PizzaCurst';
-import { pizzaSizes } from './selection/PizzaSize';
-import SizeSelections from './selection/SizeSelections';
-import Toppings from './selection/Toppings';
-import { CartContext } from '../context/CartContext';
+import CrustSelections from '../selection/CrustSelections';
+import { pizzaCrusts } from '../selection/PizzaCurst';
+import { pizzaSizes } from '../selection/PizzaSize';
+import SizeSelections from '../selection/SizeSelections';
+import Toppings from '../selection/Toppings';
+import { CartContext } from '../../context/CartContext';
 
 const PizzaDetails = ({ pizza, closeModal }) => {
   const [size, setSize] = useState(pizzaSizes.SMALL);
