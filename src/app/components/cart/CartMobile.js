@@ -19,7 +19,7 @@ const CartMobile = () => {
         className={`px-4 flex flex-col gap-y-4 py-2 mr-4 mt-8 h-[60vh] overflow-y-scroll
        scrollbar-thin scrollbar-thumb-secondary ${
          cartItems?.length >= 3
-           ? 'scrollbar-trach-white/10'
+           ? 'scrollbar-track-white/10'
            : ' scrollbar-track-transparent'
        }`}
       >
