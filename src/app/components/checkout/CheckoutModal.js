@@ -16,6 +16,13 @@ Modal.setAppElement('body');
 const CheckoutModal = ({ isModalOpen, closeModal }) => {
   const { cartItems, setCartItems, getTotalPrice } = useContext(CartContext);
   const [successMessage, setSuccessMessage] = useState(false);
+
+  const handleSuccessMassageClose = () => {
+    closeModal();
+    setSuccessMessage(false);
+    setCartItems([]);
+  };
+
   return (
     isModalOpen && (
       <Modal
@@ -27,14 +34,12 @@ const CheckoutModal = ({ isModalOpen, closeModal }) => {
         onRequestClose={closeModal}
         contentLabel="Checkout Modal"
       >
-        <ModalCloseButton onClick={closeModal} />
+        <ModalCloseButton
+          onClick={successMessage ? handleSuccessMassageClose : closeModal}
+        />
 
         {successMessage ? (
-          <SuccessMessage
-            setCartItems={setCartItems}
-            closeModal={closeModal}
-            setSuccessMessage={setSuccessMessage}
-          />
+          <SuccessMessage closeModal={handleSuccessMassageClose} />
         ) : (
           <div className="lg:gap-x-8 h-full lg:px-12 lg:py-8">
             <h2

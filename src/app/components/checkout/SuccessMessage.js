@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
-const SuccessMessage = ({ setCartItems, closeModal, setSuccessMessage }) => {
+const SuccessMessage = ({ closeModal }) => {
   const [count, setCount] = useState(5);
 
   useEffect(() => {
@@ -11,10 +11,8 @@ const SuccessMessage = ({ setCartItems, closeModal, setSuccessMessage }) => {
       }, 1000);
     } else {
       closeModal();
-      setSuccessMessage(false);
-      setCartItems([]);
     }
-  }, [setSuccessMessage, count, setCartItems, closeModal]);
+  }, [count, closeModal]);
 
   return (
     <div
