@@ -1,3 +1,4 @@
+import { successGif } from '@/app/data/pizzas';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
@@ -22,7 +23,7 @@ const SuccessMessage = ({ closeModal }) => {
       <h2 className="text-2xl font-semibold text-center">
         Thank you! The order has been placed!
       </h2>
-      <Image src="/success-1.gif" alt="" width={150} height={150} />
+      <Image src={successGif} alt="" width={150} height={150} />
       <div>
         This window will close automatically in <span>{count}</span> seconds.
       </div>

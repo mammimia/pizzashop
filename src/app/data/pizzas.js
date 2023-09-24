@@ -1,31 +1,33 @@
+const isDev = process.env.NODE_ENV === 'development';
+const baseImgPath = isDev ? '' : '/pizzaland';
 const toppings = [
   {
     id: 1,
-    image: '/cherry.png',
+    image: baseImgPath + '/cherry.png',
     name: 'cherry tomatoes',
     price: 2
   },
   {
     id: 2,
-    image: '/corn.png',
+    image: baseImgPath + '/corn.png',
     name: 'corn',
     price: 2
   },
   {
     id: 3,
-    image: '/fresh-tomatoes.png',
+    image: baseImgPath + '/fresh-tomatoes.png',
     name: 'fresh tomatoes',
     price: 2
   },
   {
     id: 4,
-    image: '/jalapeno.png',
+    image: baseImgPath + '/jalapeno.png',
     name: 'jalapeno',
     price: 2
   },
   {
     id: 5,
-    image: '/parmesan.png',
+    image: baseImgPath + '/parmesan.png',
     name: 'parmesan',
     price: 2
   }
@@ -37,7 +39,7 @@ export const pizzas = [
     name: 'capricciosa',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/capricciosa.webp',
+    image: baseImgPath + '/capricciosa.webp',
     priceSm: 9.99,
     priceMd: 10.99,
     priceLg: 11.99,
@@ -48,7 +50,7 @@ export const pizzas = [
     name: 'cheesy',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/cheesy.webp',
+    image: baseImgPath + '/cheesy.webp',
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
@@ -59,7 +61,7 @@ export const pizzas = [
     name: 'hawaii',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/hawaii.webp',
+    image: baseImgPath + '/hawaii.webp',
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
@@ -70,7 +72,7 @@ export const pizzas = [
     name: 'italian',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/italian.webp',
+    image: baseImgPath + '/italian.webp',
     priceSm: 11.99,
     priceMd: 12.99,
     priceLg: 13.99,
@@ -81,7 +83,7 @@ export const pizzas = [
     name: 'margherita',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/margherita.webp',
+    image: baseImgPath + '/margherita.webp',
     priceSm: 9.99,
     priceMd: 10.99,
     priceLg: 11.99,
@@ -92,7 +94,7 @@ export const pizzas = [
     name: 'pepperoni',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/pepperoni.webp',
+    image: baseImgPath + '/pepperoni.webp',
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
@@ -103,7 +105,7 @@ export const pizzas = [
     name: 'quattro formaggi',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/quattro-formaggi.webp',
+    image: baseImgPath + '/quattro-formaggi.webp',
     priceSm: 12.99,
     priceMd: 13.99,
     priceLg: 14.99,
@@ -114,7 +116,7 @@ export const pizzas = [
     name: 'quattro stagioni',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/quattro-stagioni.webp',
+    image: baseImgPath + '/quattro-stagioni.webp',
     priceSm: 11.99,
     priceMd: 12.99,
     priceLg: 13.99,
@@ -125,7 +127,7 @@ export const pizzas = [
     name: 'tonno',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/tonno.webp',
+    image: baseImgPath + '/tonno.webp',
     priceSm: 10.99,
     priceMd: 11.99,
     priceLg: 12.99,
@@ -136,10 +138,22 @@ export const pizzas = [
     name: 'vegetarian',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
-    image: '/vegetarian.webp',
+    image: baseImgPath + '/vegetarian.webp',
     priceSm: 9.99,
     priceMd: 10.99,
     priceLg: 11.99,
     toppings
   }
 ];
+
+export const bannerImage = baseImgPath + '/pizza-banner.png';
+export const chili1 = baseImgPath + '/chilli-1.png';
+export const chili2 = baseImgPath + '/chilli-2.png';
+export const garlic1 = baseImgPath + '/garlic-1.png';
+export const garlic2 = baseImgPath + '/garlic-2.png';
+export const garlic3 = baseImgPath + '/garlic-3.png';
+export const leaves = baseImgPath + '/leaves.png';
+export const logo = baseImgPath + '/logo.svg';
+export const phone = baseImgPath + '/phone.svg';
+export const bag = baseImgPath + '/bag.svg';
+export const successGif = baseImgPath + '/success-1.gif';

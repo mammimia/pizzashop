@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { bag, logo, phone } from '@/app/data/pizzas';
 
 const Nav = () => {
   const { isOpen, setIsOpen, cartItems } = useContext(CartContext);
@@ -14,11 +15,11 @@ const Nav = () => {
        items-center"
       >
         <Link href="#" className="max-w-[160px] lg:max-w-max">
-          <Image src="logo.svg" width={180} height={180} alt="" />
+          <Image src={logo} width={180} height={180} alt="" />
         </Link>
         <div className="flex gap-x-8 items-center">
           <div className="flex gap-x-3 items-center">
-            <Image src="phone.svg" width={42} height={42} alt="" />
+            <Image src={phone} width={42} height={42} alt="" />
             <div className="text-white">
               <div
                 className="font-robotoCondensed uppercase font-medium leading-none
@@ -38,7 +39,7 @@ const Nav = () => {
             className="relative cursor-pointer hidden lg:flex"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <Image src="bag.svg" width={38} height={38} alt="" />
+            <Image src={bag} width={38} height={38} alt="" />
             <div
               className="bg-tertiary w-6 h-6 rounded-full text-white flex 
             justify-center items-center text-[13px] font-robotoCondensed absolute 

@@ -1,3 +1,4 @@
+import { logo } from '@/app/data/pizzas';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -14,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-y-6 justify-center">
           <Link href="#">
-            <Image src="logo.svg" width={180} height={180} alt="" />
+            <Image src={logo} width={180} height={180} alt="" />
           </Link>
           <div className="flex gap-x-6 text-xl text-white">
             <Link href="#">
