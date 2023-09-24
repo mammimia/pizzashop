@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const isDev = process.env.NODE_ENV === 'development';
-const baseImgPath = isDev ? '' : '/pizzaland';
+const baseImgPath = isDev ? '' : '/pizzashop';
 
 module.exports = {
   content: [

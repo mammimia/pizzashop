@@ -6,7 +6,7 @@ This is a Pizzaland Website project. It was developed for learning purposes.
 
 You can click the link below to see the live version.
 
-https://mammimia.github.io/pizzaland/
+https://mammimia.github.io/pizzashop/
 
 ## Tech Stack
 
