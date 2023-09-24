@@ -8,16 +8,20 @@ const CartProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (item) => {
-    const existingItemIndex = cartItems.findIndex(
+  const getExistingItemIndex = (item) => {
+    return cartItems.findIndex(
       (cartItem) =>
-        cartItem.id === item.id &&
+        cartItem.pizza.id === item.pizza.id &&
         cartItem.size === item.size &&
         cartItem.price === item.price &&
         JSON.stringify(cartItem.additionalToppings) ===
           JSON.stringify(item.additionalToppings) &&
         cartItem.crust === item.crust
     );
+  };
+
+  const addToCart = (item) => {
+    const existingItemIndex = getExistingItemIndex(item);
 
     if (existingItemIndex === -1) {
       const newItem = {
@@ -38,10 +42,38 @@ const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (item) => {
-    const newCartItems = cartItems.filter(
-      (cartItem) => cartItem.id !== item.id
-    );
-    setCartItems(newCartItems);
+    const existingItemIndex = getExistingItemIndex(item);
+
+    if (existingItemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      newCartItems.splice(existingItemIndex, 1);
+      setCartItems(newCartItems);
+    }
+  };
+
+  const increaseQuantity = (item) => {
+    const existingItemIndex = getExistingItemIndex(item);
+
+    if (existingItemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      newCartItems[existingItemIndex].quantity += 1;
+      setCartItems(newCartItems);
+    }
+  };
+
+  const decreaseQuantity = (item) => {
+    const existingItemIndex = getExistingItemIndex(item);
+
+    if (existingItemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      if (newCartItems[existingItemIndex].quantity > 1) {
+        newCartItems[existingItemIndex].quantity -= 1;
+        setCartItems(newCartItems);
+      } else {
+        newCartItems.splice(existingItemIndex, 1);
+        setCartItems(newCartItems);
+      }
+    }
   };
 
   const getTotalPrice = () => {
@@ -59,7 +91,9 @@ const CartProvider = ({ children }) => {
         cartItems,
         addToCart,
         removeFromCart,
-        getTotalPrice
+        getTotalPrice,
+        increaseQuantity,
+        decreaseQuantity
       }}
     >
       {children}
