@@ -1,8 +1,12 @@
 import { CartContext } from '@/app/context/CartContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import Modal from 'react-modal';
+import CheckoutModal from '../checkout/CheckoutModal';
 
 const CartBottom = () => {
-  const { cartItems, getTotalPrice } = useContext(CartContext);
+  const { cartItems, setIsOpen, getTotalPrice } = useContext(CartContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       {cartItems?.length > 0 ? (
@@ -16,7 +20,13 @@ const CartBottom = () => {
           </div>
 
           <div className="flex flex-col gap-y-3">
-            <button className="btn btn-lg gradient font-semibold flex justify-center">
+            <button
+              className="btn btn-lg gradient font-semibold flex justify-center"
+              onClick={() => {
+                setIsModalOpen(true);
+                setIsOpen(false);
+              }}
+            >
               Checkout
             </button>
           </div>
@@ -26,6 +36,11 @@ const CartBottom = () => {
           <div className="font-semibold">Your cart is empty</div>
         </div>
       )}
+
+      <CheckoutModal
+        isModalOpen={isModalOpen}
+        closeModal={() => setIsModalOpen(false)}
+      />
     </>
   );
 };
